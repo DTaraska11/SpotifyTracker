@@ -1,0 +1,30 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - Playlist Tracker</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<nav>
+    <ul>
+      <li><a href="{{ url_for('playlist.home') }}">Home</a>
+      <li><a href="{{ url_for('playlist.about') }}">About</a>
+      {% if g.user %}
+        <li><a href="{{ url_for('playlist.playlistsView') }}">My Playlists</a>
+        <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
+        <li><span>{{ g.user['username'] }}</span>
+      {% else %}
+        <li><a href="{{ url_for('auth.register') }}">Register</a>
+        <li><a href="{{ url_for('auth.login') }}">Log In</a>
+      {% endif %}
+    </ul>
+</nav>
+
+<section class="content">
+  <center>
+    <header>
+      {% block header %}{% endblock %}
+    </header>
+  </center>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>

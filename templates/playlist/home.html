@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Playlist{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="Spotify_Name">Username</label>
+    <input name="spotifyName" id="Spotify_Name" required>
+    <label for="playlistID">PlaylistID</label>
+    <input name="playlistID" id="playlistID" required>
+    <input type="submit" value="Submit">
+  </form>
+{% endblock %}

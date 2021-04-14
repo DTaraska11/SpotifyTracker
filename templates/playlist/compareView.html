@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Playlist{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    {% for line in report %}
+      <header>
+        {% if line[0] == '-' %}
+        <center>
+          <label style="line-height: 25px"> Track unique to FIRST version: </label>
+        </center>
+        <div style="border: 1px solid rgb(255, 0, 0); margin: 10px; padding: 25px">
+            <p class="body">{{ line }}</p>
+        </div>
+        {% elif line[0] == '+' %}
+        <label> Track unique to SECOND version: </label>
+        <div style="border: 1px solid rgb(0, 4, 255); margin: 10px; padding: 25px">
+          <p class="body">{{ line }}</p>
+        </div>
+        {% else %}
+        <div>
+          <p class="body">{{ line }}</p>
+        </div>
+        {% endif %}
+      </header>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}

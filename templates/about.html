@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<br>
+  <h1>{% block title %}About{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <br> <br>
+    <div style="background-color: rgb(53, 53, 53); color: rgb(93, 255, 17);">
+      <center><header>How it works: </header></center>
+          
+              <p>
+                  <br>
+                  1. Register an account (any playlist records you make will automatically be saved and accessible from 'My Playlists') <br> <br>
+                  2. 'Create Record' <br> <br>
+                  3. Enter the username of the SPOTIFY account that created the playlist, along with the playlist id. <br> <br>
+                          The id can be found in the url of the playlist. <br> <br>
+                          For example: https://open.spotify.com/playlist/3bqTRt46r28sw4YP92m6Dd <br><br> '3bqTRt46r28sw4YP92m6Dd' is the playlist ID <br><br>
+                  4. Submit. For large playlists, this will take an extremely long time. <br><br>
+                  5. Once it loads, you'll be presented with a view of the metadata of all the tracks in your playlist. <br><br>
+                  6. 'My Playlists' <br><br>
+                  7. 'View Records' for the desired playlist <br><br>
+                  8. All the records you've created with the associated timestamps <br><br>
+                  9. Check any two versions and hit 'Compare' <br> <br>
+
+              </p>
+    </div>    
+    <div style="background-color: rgb(53, 53, 53);color: rgb(93, 255, 17);">    
+      <center><header> Made by Dominic Taraska: </header></center>
+              <p>
+                <br>
+                Contact: dominictaraska@gmail.com<br> <br>
+                Github: https://github.com/DTaraska11 <br> <br>
+              </p>
+    </div>
+{% endblock %}
